@@ -53,5 +53,16 @@ public class HomePage extends BaseLib {
 
         return this;
     }
+    public HomePage aboutClick(){
+        driver.findElement(By.cssSelector("#headerPanel > ul.button > li.aboutus > a")).click();
+
+        return this;
+    }
+    public HomePage aboutTitleTextCheck(String text){
+        String aboutTextTitle  = driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/h1")).getText();
+        Assert.assertEquals(aboutTextTitle,text);
+
+        return this;
+    }
 
 }

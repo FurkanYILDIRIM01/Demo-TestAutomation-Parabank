@@ -15,4 +15,13 @@ public class HomePageTest extends BaseTest{
               .customerLogin("Customer Login");
 
   }
+    @Test(description = "TC002 About Test")
+    public void TC002(){
+
+        HomePage homePage = new HomePage(driver);
+        homePage
+                .aboutClick()
+                .aboutTitleTextCheck("ParaSoft Demo Website");
+
+    }
 }
