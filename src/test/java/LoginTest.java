@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
                 .passwordSet("aa")
                 .loginClick()
                 .loginErrorTextCheck("An internal error has occurred and has been logged.");
-        attachScreenshot(driver);
+
     }
 
     @Test(description = "TC003 fail login-null password")

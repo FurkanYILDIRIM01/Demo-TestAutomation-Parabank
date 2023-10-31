@@ -37,19 +37,21 @@ public class HomePage extends BaseLib {
         String loginErrorText = driver.findElement(By.cssSelector("#rightPanel > p")).getText();
         Assert.assertEquals(loginErrorText,text);
         Allure.addAttachment(text+ ": error message displayed","#rightPanel > p");
-
+        attachScreenshot(driver);
         return this;
     }
 
     public HomePage topPanelCaption(String text){
         String topPanelCaptionCheck = driver.findElement(By.className("caption")).getText();
         Assert.assertEquals(topPanelCaptionCheck,text);
-
+        Allure.addAttachment(text+ ": Home Page topPanel title displayed","By.className(\"caption\")");
+        attachScreenshot(driver);
         return this;
     }
     public HomePage customerLogin(String text){
         String customerLoginTextCheck = driver.findElement(By.cssSelector("#leftPanel > h2")).getText();
         Assert.assertEquals(customerLoginTextCheck,text);
+        attachScreenshot(driver);
 
         return this;
     }
@@ -61,7 +63,8 @@ public class HomePage extends BaseLib {
     public HomePage aboutTitleTextCheck(String text){
         String aboutTextTitle  = driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/h1")).getText();
         Assert.assertEquals(aboutTextTitle,text);
-
+        Allure.addAttachment(text+ ": About Page title displayed","//*[@id=\"rightPanel\"]/h1");
+        attachScreenshot(driver);
         return this;
     }
 
